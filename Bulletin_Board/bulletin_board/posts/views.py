@@ -59,7 +59,7 @@ def post_update(request, pk):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
-            return redirect("post_list")
+        return redirect("post_list")
     else:
         form = PostForm(instance=post)
         return render(request, "posts/post_form.html", {"form": form})
